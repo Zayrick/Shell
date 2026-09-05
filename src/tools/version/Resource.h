@@ -80,4 +80,16 @@ constexpr auto APP_WEBSITELINK	= L"https://nilesoft.org";
 #define IDS_RESTART_EXPLORERQ		2006
 #define IDS_RESTART_EXPLORER		2007
 #define IDS_SELECT_FOLDER			2008
+#define IDS_DLL_NOT_FOUND			2009
+#define IDS_CLOSE					2010
+#define IDS_REGISTER					2011
+#define IDS_UNREGISTER				2012
+#define IDS_RESTART_EXPLORER_BUTTON	2013
+#define IDS_WEBSITE					2014
+#define IDS_EMAIL					2015
+#define IDS_DONATE					2016
+#define IDS_CMDLINE_HELP				2017
+#define IDS_ABOUT					2018
+#define IDS_ABOUT_TEXT				2019
+#define IDS_ALL_FILES				2020
 }

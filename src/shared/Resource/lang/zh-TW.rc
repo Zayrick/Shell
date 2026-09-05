@@ -1,0 +1,46 @@
+STRINGTABLE
+{
+	IDS_REGISTER_SUCCESS			L"註冊成功。"
+	IDS_UNREGISTER_SUCCESS			L"取消註冊成功。"
+	IDS_REGISTER_NOT_SUCCESS			L"無法完成註冊。"
+	IDS_UNREGISTER_NOT_SUCCESS		L"無法完成取消註冊。"
+	IDS_ADMIN_PRIVILEGES			L"需要系統管理員權限。"
+	IDS_WINDOWS_COMPATIBILITY		L"不支援目前的 Windows 版本，需要 Windows 7 或更新版本。"
+	IDS_RESTART_EXPLORERQ			L"是否重新啟動 Windows 檔案總管？"
+	IDS_RESTART_EXPLORER			L"正在重新啟動 Windows 檔案總管。"
+	IDS_SELECT_FOLDER			L"請選取一個資料夾。"
+	IDS_DLL_NOT_FOUND			L"找不到 shell.dll。"
+	IDS_CLOSE				L"關閉"
+	IDS_REGISTER				L"註冊"
+	IDS_UNREGISTER				L"取消註冊"
+	IDS_RESTART_EXPLORER_BUTTON		L"重新啟動檔案總管"
+	IDS_WEBSITE				L"官方網站"
+	IDS_EMAIL				L"電子郵件"
+	IDS_DONATE				L"捐款"
+	IDS_ABOUT				L"關於"
+	IDS_ABOUT_TEXT				L"%s\n版本 %s\n%s\n© %d %s."
+	IDS_ALL_FILES				L"所有檔案 (*.*)"
+	IDS_CMDLINE_HELP				L"命令列說明\r\n\r\n-register\t\t註冊 Shell。\r\n-unregister\t取消註冊 Shell。\r\n-treat\t\t停用 Windows 11 快顯功能表。\r\n-silent\t\t不顯示提示訊息。\r\n-restart\t\t重新啟動 Windows 檔案總管。\r\n\r\n-?\t\t顯示此說明訊息。\r\n\r\n範例：\r\nshell.exe -register -treat\r\n"
+}
+
+#ifdef _WINDLL
+IDD_INPUTBOX DIALOGEX 0, 0, 300, 60
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU | DS_CENTER
+CAPTION "Shell 輸入"
+FONT 9, "Microsoft JhengHei", 0, 0, 0x1
+{
+	LTEXT           "請輸入：", IDC_INPUTBOX_PROMPT, 5, 5, 290, 14, SS_NOPREFIX
+	EDITTEXT        IDC_INPUTBOX_EDIT, 5, 20, 290, 14, ES_AUTOHSCROLL
+	DEFPUSHBUTTON   "確定", IDOK, 245, 40, 50, 14, WS_GROUP
+	PUSHBUTTON      "取消", IDCANCEL, 190, 40, 50, 14, WS_GROUP
+}
+#else
+IDD_CMDLINE DIALOGEX 0, 0, 280, 185
+STYLE DS_SETFONT | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Nilesoft Shell"
+FONT 9, "Microsoft JhengHei", 0, 0, 0x1
+{
+	EDITTEXT        IDC_CMDLINE_TEXT, 10, 10, 260, 150, ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL | NOT WS_TABSTOP
+	DEFPUSHBUTTON   "確定", IDOK, 220, 165, 50, 15
+}
+#endif

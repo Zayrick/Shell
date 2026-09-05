@@ -1,5 +1,4 @@
-//#pragma code_page(65001) // utf-8
-//#pragma code_page(1252) // English
+#pragma code_page(65001)
 
 #include <windows.h>
 #include <commctrl.h>
@@ -66,49 +65,15 @@ TRT_MANIFEST		RT_MANIFEST		".\\manifest.xml"
 //
 //IDB_BITMAP1        BITMAP         "bitmap1.bmp"
 
-//
-// String Table resources
-//
-STRINGTABLE
-{
-#ifdef _WINDLL
-	IDS_SELECT_FOLDER				L"Please select a folder."
-#endif
-	IDS_REGISTER_SUCCESS			L"Register completed successfully."
-	IDS_UNREGISTER_SUCCESS			L"Unregister completed successfully."
-	IDS_REGISTER_NOT_SUCCESS		L"Register not completed."
-	IDS_UNREGISTER_NOT_SUCCESS		L"Unregister not completed."
-	IDS_ADMIN_PRIVILEGES			L"Missing administrative privileges!"
-	IDS_WINDOWS_COMPATIBILITY		L"Windows Version Not Supported, You need at least Windows 7."
-	IDS_RESTART_EXPLORERQ			L"Restart Windows Explorer?"
-	IDS_RESTART_EXPLORER			L"Restart Explorer."
-}
-
-//
-// Dialog resources
-//
-#ifdef _WINDLL
-
-IDD_INPUTBOX DIALOGEX 0, 0, 300, 60
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU | DS_CENTER
-CAPTION "Shell Input"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-{
-	LTEXT           "Prompt:", IDC_INPUTBOX_PROMPT, 5, 5, 290, 14, SS_NOPREFIX
-	EDITTEXT        IDC_INPUTBOX_EDIT, 5, 20, 290, 14, ES_AUTOHSCROLL
-	DEFPUSHBUTTON   "Ok", IDOK, 245, 40, 50, 14, WS_GROUP
-	PUSHBUTTON      "Cancel", IDCANCEL, 190, 40, 50, 14, WS_GROUP
-}
-
-#else
-
-IDD_CMDLINE DIALOGEX 0, 0, 280, 185
-STYLE DS_SETFONT | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Nilesoft Shell"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-{
-	EDITTEXT		IDC_CMDLINE_TEXT, 10, 10, 260, 150, ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL | NOT WS_TABSTOP
-	DEFPUSHBUTTON   "OK", IDOK, 220, 165, 50, 15
-}
-
-#endif
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#include "lang\\en-US.rc"
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#include "lang\\zh-CN.rc"
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SINGAPORE
+#include "lang\\zh-CN.rc"
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+#include "lang\\zh-TW.rc"
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_HONGKONG
+#include "lang\\zh-TW.rc"
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_MACAU
+#include "lang\\zh-TW.rc"

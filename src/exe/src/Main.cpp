@@ -83,18 +83,6 @@ COLORREF color_background = 0xffffff;
 template<typename T = long>
 T dpi(auto value) { return static_cast<T>((value * _dpi) / 96); }
 
-string loadstring(UINT id, HMODULE hmodule = nullptr)
-{
-	string str(MAX_PATH);
-	auto size = ::LoadStringW(hmodule, id, str.buffer(), MAX_PATH);
-	if(size > MAX_PATH)
-	{
-		size = ::LoadStringW(hmodule, id, str.buffer(size + 1), size);
-	}
-	return str.release(size).move();
-}
-
-
 BOOL EnablePrivilege()
 {
 	BOOL result = FALSE;
@@ -401,7 +389,7 @@ bool Register(REGOP reg, HWND hwnd = nullptr)
 		if(!is_elevated)
 		{
 			// Missing administrative privileges!
-			string msg = loadstring(IDS_ADMIN_PRIVILEGES, dll).move();
+			string msg = string::Extract(IDS_ADMIN_PRIVILEGES).move();
 			_log->error(msg);
 			if(!reg.SILENT)
 			{
@@ -414,7 +402,7 @@ bool Register(REGOP reg, HWND hwnd = nullptr)
 	
 	if(!dll)
 	{
-		auto ernf = L"shell.dll not found.";
+		auto ernf = string::Extract(IDS_DLL_NOT_FOUND);
 		_log->error(ernf);
 		if(!reg.SILENT)
 			MessageBox::Show(ernf, APP_FULLNAME, MessageBoxIcon::Warning);
@@ -703,26 +691,26 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR,
 		PlutoVG pluto(dd.data(), static_cast<int>(dd.length()), dpi(96), dpi(96), 96);
 		hbitmap_logo = pluto.tobitmap();
 
-		auto btn_close = new UI::Button(L"\uE256", { rc_window.right - dpi(27), dpi(1), dpi(26), dpi(26) }, ID_CLOSE, main_window, BS_OWNERDRAW, _hfont_icon, L"Close");
+		auto btn_close = new UI::Button(L"\uE256", { rc_window.right - dpi(27), dpi(1), dpi(26), dpi(26) }, ID_CLOSE, main_window, BS_OWNERDRAW, _hfont_icon, string::Extract(IDS_CLOSE));
         
-		auto btn_reg = new UI::Button(L"Register\tCtrl+R", rc_reg, ID_REG, main_window, BS_OWNERDRAW);
-        auto btn_unreg = new UI::Button(L"Unregister\tCtrl+U", rc_unreg, ID_UNREG, main_window, BS_OWNERDRAW);
-        auto btn_restart = new UI::Button(L"Restart Explorer\tCtrl+X", { rc_reg.left, rc_unreg.top + offset_2 + btn_h, btn_w, btn_h }, ID_RESTART, main_window, BS_OWNERDRAW);
+		auto btn_reg = new UI::Button(string::Extract(IDS_REGISTER) + L"\tCtrl+R", rc_reg, ID_REG, main_window, BS_OWNERDRAW);
+        auto btn_unreg = new UI::Button(string::Extract(IDS_UNREGISTER) + L"\tCtrl+U", rc_unreg, ID_UNREG, main_window, BS_OWNERDRAW);
+        auto btn_restart = new UI::Button(string::Extract(IDS_RESTART_EXPLORER_BUTTON) + L"\tCtrl+X", { rc_reg.left, rc_unreg.top + offset_2 + btn_h, btn_w, btn_h }, ID_RESTART, main_window, BS_OWNERDRAW);
 
         auto tt = btn_restart->Rect.top + dpi(30) + btn_h + offset_2;
         auto tl = btn_restart->Rect.left;
 
-        auto btn_web = new UI::Button(L"\uE11F", { tl, tt, btn_h, btn_h }, ID_WEB, main_window, BS_OWNERDRAW, _hfont_icon,  L"Website Ctrl+W");
+        auto btn_web = new UI::Button(L"\uE11F", { tl, tt, btn_h, btn_h }, ID_WEB, main_window, BS_OWNERDRAW, _hfont_icon, string::Extract(IDS_WEBSITE) + L" Ctrl+W");
        
         tl += btn_h + offset_2;
-        auto btn_email = new UI::Button(L"\uE115", { tl, tt, btn_h, btn_h }, ID_EMAIL, main_window, BS_OWNERDRAW, _hfont_icon, L"Email Ctrl+E");
+        auto btn_email = new UI::Button(L"\uE115", { tl, tt, btn_h, btn_h }, ID_EMAIL, main_window, BS_OWNERDRAW, _hfont_icon, string::Extract(IDS_EMAIL) + L" Ctrl+E");
        
         tl += btn_h + offset_2;
-        auto btn_bug = new UI::Button(L"\uE22B", { tl, tt, btn_h, btn_h }, ID_GITHUB, main_window, BS_OWNERDRAW, _hfont_icon, L"Github Ctrl+G");
+        auto btn_bug = new UI::Button(L"\uE22B", { tl, tt, btn_h, btn_h }, ID_GITHUB, main_window, BS_OWNERDRAW, _hfont_icon, L"GitHub Ctrl+G");
 
 		//tl += (dpi(50) - btn_h) + btn_h + dpi(12);
 		tl += btn_h + offset_2;
-        auto btn_donate = new UI::Button(L"\uE1A8", { tl, tt, btn_h, btn_h }, ID_DONATE, main_window, BS_OWNERDRAW, _hfont_icon, L"Donate Ctrl+D");
+        auto btn_donate = new UI::Button(L"\uE1A8", { tl, tt, btn_h, btn_h }, ID_DONATE, main_window, BS_OWNERDRAW, _hfont_icon, string::Extract(IDS_DONATE) + L" Ctrl+D");
 
 
         main_window->SetColor({ btn_reg, btn_unreg,btn_restart,btn_donate,btn_web,btn_email,btn_bug }, 
@@ -1140,21 +1128,7 @@ BOOL CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, [[maybe_unused]] L
     {
 		case WM_INITDIALOG:
         {
-			//WCHAR szTitle[100];
-			// LoadString(g_hInstance, IDS_APP_TITLE, szTitle, ARRAYSIZE(szTitle));
-            auto usage = L"Command-Line Help\r\n\r\n"
-                //L"shell.exe [-[r][u]] [-i] [-s] [-re]\n\n"
-                L"-register\t\tRegistering.\r\n"
-                L"-unregister\tUnregistering.\r\n"
-                L"-treat\t\tDisable Windows 11 context menu.\r\n"
-                L"-silent\t\tPrevents displaying messages.\r\n"
-                L"-restart\t\tRestart Windows Explorer.\r\n\r\n"
-                //L"-runas:N\t\tLaunch with elevated privileges.\r\n"
-                //L"\t\tN=[admin | system | trustedinsaller]\r\n\r\n"
-                L"-?\t\tDispay this help message.\r\n\r\n"
-                L"Examples:\r\nshell.exe -register -treat\r\n"
-              //  L"shell.exe -runas:admin -cmd:'cmd.exe' -args:\"/K echo Hello world!\"\r\n"
-                ;
+            auto usage = string::Extract(IDS_CMDLINE_HELP);
             ::SetDlgItemTextW(hwnd, IDC_CMDLINE_TEXT, usage);
            // SendDlgItemMessage(hwnd, IDC_CMDLINE_TEXT, EM_SETSEL, -1, -1);
             break;

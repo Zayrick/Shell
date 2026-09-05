@@ -1,0 +1,46 @@
+STRINGTABLE
+{
+	IDS_REGISTER_SUCCESS			L"Registration completed successfully."
+	IDS_UNREGISTER_SUCCESS			L"Unregistration completed successfully."
+	IDS_REGISTER_NOT_SUCCESS			L"Registration did not complete."
+	IDS_UNREGISTER_NOT_SUCCESS		L"Unregistration did not complete."
+	IDS_ADMIN_PRIVILEGES			L"Administrator privileges are required."
+	IDS_WINDOWS_COMPATIBILITY		L"This Windows version is not supported. Windows 7 or later is required."
+	IDS_RESTART_EXPLORERQ			L"Restart Windows Explorer?"
+	IDS_RESTART_EXPLORER			L"Restarting Windows Explorer."
+	IDS_SELECT_FOLDER			L"Please select a folder."
+	IDS_DLL_NOT_FOUND			L"shell.dll was not found."
+	IDS_CLOSE				L"Close"
+	IDS_REGISTER				L"Register"
+	IDS_UNREGISTER				L"Unregister"
+	IDS_RESTART_EXPLORER_BUTTON		L"Restart Explorer"
+	IDS_WEBSITE				L"Website"
+	IDS_EMAIL				L"Email"
+	IDS_DONATE				L"Donate"
+	IDS_ABOUT				L"About"
+	IDS_ABOUT_TEXT				L"%s\nVersion %s\n%s\n© %d %s."
+	IDS_ALL_FILES				L"All files (*.*)"
+	IDS_CMDLINE_HELP				L"Command-line help\r\n\r\n-register\t\tRegister Shell.\r\n-unregister\tUnregister Shell.\r\n-treat\t\tDisable the Windows 11 context menu.\r\n-silent\t\tDo not display messages.\r\n-restart\t\tRestart Windows Explorer.\r\n\r\n-?\t\tDisplay this help message.\r\n\r\nExamples:\r\nshell.exe -register -treat\r\n"
+}
+
+#ifdef _WINDLL
+IDD_INPUTBOX DIALOGEX 0, 0, 300, 60
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU | DS_CENTER
+CAPTION "Shell Input"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+{
+	LTEXT           "Prompt:", IDC_INPUTBOX_PROMPT, 5, 5, 290, 14, SS_NOPREFIX
+	EDITTEXT        IDC_INPUTBOX_EDIT, 5, 20, 290, 14, ES_AUTOHSCROLL
+	DEFPUSHBUTTON   "OK", IDOK, 245, 40, 50, 14, WS_GROUP
+	PUSHBUTTON      "Cancel", IDCANCEL, 190, 40, 50, 14, WS_GROUP
+}
+#else
+IDD_CMDLINE DIALOGEX 0, 0, 280, 185
+STYLE DS_SETFONT | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Nilesoft Shell"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+{
+	EDITTEXT        IDC_CMDLINE_TEXT, 10, 10, 260, 150, ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL | NOT WS_TABSTOP
+	DEFPUSHBUTTON   "OK", IDOK, 220, 165, 50, 15
+}
+#endif

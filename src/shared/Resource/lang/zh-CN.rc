@@ -1,0 +1,46 @@
+STRINGTABLE
+{
+	IDS_REGISTER_SUCCESS			L"注册成功。"
+	IDS_UNREGISTER_SUCCESS			L"取消注册成功。"
+	IDS_REGISTER_NOT_SUCCESS			L"未能完成注册。"
+	IDS_UNREGISTER_NOT_SUCCESS		L"未能完成取消注册。"
+	IDS_ADMIN_PRIVILEGES			L"需要管理员权限。"
+	IDS_WINDOWS_COMPATIBILITY		L"不支持当前 Windows 版本，需要 Windows 7 或更高版本。"
+	IDS_RESTART_EXPLORERQ			L"是否重启 Windows 资源管理器？"
+	IDS_RESTART_EXPLORER			L"正在重启 Windows 资源管理器。"
+	IDS_SELECT_FOLDER			L"请选择一个文件夹。"
+	IDS_DLL_NOT_FOUND			L"找不到 shell.dll。"
+	IDS_CLOSE				L"关闭"
+	IDS_REGISTER				L"注册"
+	IDS_UNREGISTER				L"取消注册"
+	IDS_RESTART_EXPLORER_BUTTON		L"重启资源管理器"
+	IDS_WEBSITE				L"官方网站"
+	IDS_EMAIL				L"电子邮件"
+	IDS_DONATE				L"捐赠"
+	IDS_ABOUT				L"关于"
+	IDS_ABOUT_TEXT				L"%s\n版本 %s\n%s\n© %d %s."
+	IDS_ALL_FILES				L"所有文件 (*.*)"
+	IDS_CMDLINE_HELP				L"命令行帮助\r\n\r\n-register\t\t注册 Shell。\r\n-unregister\t取消注册 Shell。\r\n-treat\t\t禁用 Windows 11 上下文菜单。\r\n-silent\t\t不显示提示消息。\r\n-restart\t\t重启 Windows 资源管理器。\r\n\r\n-?\t\t显示此帮助信息。\r\n\r\n示例：\r\nshell.exe -register -treat\r\n"
+}
+
+#ifdef _WINDLL
+IDD_INPUTBOX DIALOGEX 0, 0, 300, 60
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU | DS_CENTER
+CAPTION "Shell 输入"
+FONT 9, "Microsoft YaHei", 0, 0, 0x1
+{
+	LTEXT           "请输入：", IDC_INPUTBOX_PROMPT, 5, 5, 290, 14, SS_NOPREFIX
+	EDITTEXT        IDC_INPUTBOX_EDIT, 5, 20, 290, 14, ES_AUTOHSCROLL
+	DEFPUSHBUTTON   "确定", IDOK, 245, 40, 50, 14, WS_GROUP
+	PUSHBUTTON      "取消", IDCANCEL, 190, 40, 50, 14, WS_GROUP
+}
+#else
+IDD_CMDLINE DIALOGEX 0, 0, 280, 185
+STYLE DS_SETFONT | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Nilesoft Shell"
+FONT 9, "Microsoft YaHei", 0, 0, 0x1
+{
+	EDITTEXT        IDC_CMDLINE_TEXT, 10, 10, 260, 150, ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL | NOT WS_TABSTOP
+	DEFPUSHBUTTON   "确定", IDOK, 220, 165, 50, 15
+}
+#endif

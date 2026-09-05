@@ -32,15 +32,23 @@ If you are not satisfied with the default search order, you can modify this file
 	<PropertyGroup>
 		<!--<DisableAdvancedSupport>true</DisableAdvancedSupport>-->
 		<!--<SupportWinXP>true</SupportWinXP>-->
+		<!-- Keep Shell's Windows 7 baseline on x86/x64 and Windows 10 on ARM64. -->
+		<WindowsTargetPlatformMinVersion Condition="'$(WindowsTargetPlatformMinVersion)'=='' and '$(Platform)'!='ARM64'">6.1.7600.0</WindowsTargetPlatformMinVersion>
+		<WindowsTargetPlatformMinVersion Condition="'$(WindowsTargetPlatformMinVersion)'=='' and '$(Platform)'=='ARM64'">10.0.10240.0</WindowsTargetPlatformMinVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<!--Shared.props file root directory exists VC-LTL? -->
-		<VC_LTL_Root Condition=" '$(VC_LTL_Root)'=='' ">$(SolutionDir)packages\VC-LTL.5.1.1\build\native</VC_LTL_Root>
+		<VC_LTL_Root Condition=" '$(VC_LTL_Root)'=='' ">$(MSBuildThisFileDirectory)..\packages\VC-LTL.5.3.1\build\native</VC_LTL_Root>
+		<YYThunksTargets>$(MSBuildThisFileDirectory)..\packages\YY-Thunks.1.2.2\build\native\YY-Thunks.targets</YYThunksTargets>
 	</PropertyGroup>
 
 	<ImportGroup Condition=" '$(VC_LTL_Root)'!=''">
 		<Import Project="$(VC_LTL_Root)\Config\config.props" Condition="Exists('$(VC_LTL_Root)\Config\config.props')"/>
 		<Import Project="$(VC_LTL_Root)\ltlvcrt.props" Condition="(!Exists('$(VC_LTL_Root)\Config\config.props')) And (Exists('$(VC_LTL_Root)\ltlvcrt.props'))"/>
 	</ImportGroup>
+	<Target Name="EnsureShellRuntimeDependencies" BeforeTargets="PrepareForBuild">
+		<Error Condition="!Exists('$(VC_LTL_Root)\Config\config.props')" Text="VC-LTL is missing. Run nuget restore src\Shell.sln before building." />
+		<Error Condition="!Exists('$(YYThunksTargets)')" Text="YY-Thunks is missing. Run nuget restore src\Shell.sln before building." />
+	</Target>
 </Project>

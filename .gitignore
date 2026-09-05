@@ -33,6 +33,9 @@
 # Other junk
 .DS_Store
 
+# Local release outputs and build tools
+/artifacts/
+
 src/.vs/
 src/exe/obj/
 src/dll/obj/

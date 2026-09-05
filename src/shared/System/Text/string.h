@@ -3081,20 +3081,10 @@ std::wstring replace(std::wstring const &original,
 
 			static string Extract(HMODULE module, uint32_t id)
 			{
-				string str(string::MAX);
-				auto length = ::LoadStringW(module, id, str.buffer(), str.capacity<int>());
-				if(length > 0)
-				{
-					if(length >= str.capacity<int>())
-					{
-						str.capacity<int>(length);
-						length = ::LoadStringW(module, id, str.buffer(), str.capacity<int>());
-					}
-
-					str.release(length);
-				}
-				
-				return str.move();
+				// A zero buffer size makes LoadStringW return a resource pointer.
+				const wchar_t *text = nullptr;
+				auto length = ::LoadStringW(module, id, reinterpret_cast<LPWSTR>(&text), 0);
+				return string(text, length);
 			}
 
 			static string Extract(const wchar_t *path, uint32_t id)

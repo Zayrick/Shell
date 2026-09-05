@@ -3226,8 +3226,9 @@ namespace Nilesoft
 
 							if(argc == 0)
 							{
-								for(auto c : L"All Files (*.*)\0*.*\0")
-									flt.push_back(c);
+								auto filter = string::Extract(IDS_ALL_FILES) + L"|*.*";
+								for(auto c : filter)
+									flt.push_back(c == L'|' ? L'\0' : c);
 							}
 							else
 							{
@@ -4559,12 +4560,12 @@ namespace Nilesoft
 				case IDENT_ABOUT:
 				{
 					string about;
-					about.format(L"%s\nversion %s\n%s\n© %d %s.",
+					about.format(string::Extract(IDS_ABOUT_TEXT).c_str(),
 								 APP_COMPANY L" " APP_NAME,
 								 APP_VERSION,
 								 APP_WEBSITE,
 								 VERSION_YEAR, APP_COMPANYLTD);
-					::MessageBoxW(nullptr, about, L"About", MB_OK | MB_ICONINFORMATION);
+					::MessageBoxW(nullptr, about, string::Extract(IDS_ABOUT), MB_OK | MB_ICONINFORMATION);
 					break;
 				}
 				case IDENT_USED:
