@@ -1,4 +1,9 @@
-﻿menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" title=loc.file_manage image=\uE253)
+﻿item(type='back' where=io.dir.exists(sel.path) and clipboard.can_paste_link
+	title=loc.paste_symbolic_link image=icon.paste_shortcut
+	tip=loc.paste_symbolic_link_tip pos=indexof(str.replace(title.paste_shortcut, '&', ''), 1)
+	cmd=command.paste_symlink(sel.path))
+
+menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" title=loc.file_manage image=\uE253)
 {
 	menu(separator="after" title=title.copy_path image=icon.copy_path)
 	{

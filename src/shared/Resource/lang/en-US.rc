@@ -1,5 +1,7 @@
 STRINGTABLE
 {
+	IDS_PASTE_SYMBOLIC_LINK			L"Paste symbolic link"
+	IDS_SYMBOLIC_LINK_ERROR			L"Unable to create symbolic links."
 	IDS_REGISTER_SUCCESS			L"Registration completed successfully."
 	IDS_UNREGISTER_SUCCESS			L"Unregistration completed successfully."
 	IDS_REGISTER_NOT_SUCCESS			L"Registration did not complete."

@@ -31,6 +31,8 @@ version="版本"
 web_server="Web 服务器"
 
 // file-manage.nss
+paste_symbolic_link="粘贴符号链接"
+paste_symbolic_link_tip="在此处创建指向已复制文件或文件夹的符号链接，可能需要管理员授权。"
 file_manage="文件管理"
 copy_multiple_paths='复制选中项目的路径（@sel.count 项）'
 all="全选"

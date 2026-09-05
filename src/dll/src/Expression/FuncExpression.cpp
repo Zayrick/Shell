@@ -1,5 +1,6 @@
 ﻿#include <pch.h>
 #include "Resource.h"
+#include <System/IO/SymbolicLink.h>
 #include "Expression\Constants.h"
 #include "Expression\Variable.h"
 
@@ -728,6 +729,9 @@ namespace Nilesoft
 				{
 					switch(Id[1])
 					{
+						case IDENT_CAN_PASTE_LINK:
+							_result = IO::SymbolicLink::ReadClipboard() == ERROR_SUCCESS;
+							break;
 						case IDENT_EMPTY:
 							Text::Clipboard::Empty();
 							break;
@@ -1735,6 +1739,19 @@ namespace Nilesoft
 						case IDENT_COMMAND_COPY_TO_CLIPBOARD:
 							Text::Clipboard::Set(eval_arg(0).to_string());
 							break;
+						case IDENT_COMMAND_PASTE_SYMLINK:
+						{
+							auto directory = eval_arg(0).to_string();
+							std::vector<std::wstring> files;
+							auto error = IO::SymbolicLink::ReadClipboard(&files);
+							if(error == ERROR_SUCCESS)
+								error = IO::SymbolicLink::Launch(context->Application->Manager.c_str(),
+									directory.c_str(), files, context->wnd.owner);
+							if(error != ERROR_SUCCESS && error != ERROR_NO_MORE_ITEMS)
+								IO::SymbolicLink::ShowError(Initializer::HInstance, context->wnd.owner, directory.c_str(), error);
+							_result = error == ERROR_SUCCESS;
+							break;
+						}
 						case IDENT_ID_FOLDER_OPTIONS:
 							SendCommand(41251);
 							break;

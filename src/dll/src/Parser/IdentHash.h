@@ -791,6 +791,7 @@ namespace Nilesoft
 		
 		constexpr auto IDENT_ID_SEND_FEEDBACK = 0xF4ABBE33U;
 		constexpr auto IDENT_CLIPBOARD = 0x4912A9B5U;
+		constexpr auto IDENT_CAN_PASTE_LINK = 0x6C81DDA0U;
 		constexpr auto IDENT_IS_EMPTY = 0xDC1854CFU;
 		constexpr auto IDENT_ID_COPY_TO_CLIPBOARD = 0x49C3DC71U;
 
@@ -807,6 +808,7 @@ namespace Nilesoft
 		constexpr auto IDENT_COMMAND_SHOW_WINDOWS_STACKED = 0x06B0E4EEU;
 		constexpr auto IDENT_COMMAND_COPY_TO_CLIPBOARD = 0x49C3DC71U;
 		constexpr auto IDENT_COMMAND_COPY = 0x7C954020U;
+		constexpr auto IDENT_COMMAND_PASTE_SYMLINK = 0xC8569748U;
 		constexpr auto IDENT_COMMAND_TOGGLEEXT = 0x1BD84D58U;
 		constexpr auto IDENT_COMMAND_TOGGLEHIDDEN = 0xDD2A6973U;
 		constexpr auto IDENT_COMMAND_SLEEP = 0x105CF61EU;

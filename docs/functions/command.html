@@ -1,4 +1,15 @@
 ﻿<h5>COMMAND</h5>
+<section id="command.paste_symlink" class="my-5">
+	<h5>command.paste_symlink(directory)</h5>
+	<p>Creates symbolic links to copied files or folders in the specified directory.
+	Name conflicts receive a numbered suffix. Administrator permission is requested when needed.</p>
+	<p>Returns true when the operation starts. Creation errors are shown in a dialog.</p>
+	<p>Example</p>
+	<pre><code>item(type='back' where=io.dir.exists(sel.path) and clipboard.can_paste_link
+    title='Paste symbolic link' image=icon.paste_shortcut
+    pos=indexof(str.replace(title.paste_shortcut, '&amp;', ''), 1) cmd=command.paste_symlink(sel.path))</code></pre>
+</section>
+
 <section id="command.copy" class="my-5">
 	<h5>command.copy, command.copy_to_clipboard</h5>
 	<p>copy to parameter clipboard.</p>

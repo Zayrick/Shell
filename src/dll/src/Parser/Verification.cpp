@@ -1199,6 +1199,7 @@ namespace Nilesoft
 						case IDENT_EMPTY:
 						case IDENT_IS_EMPTY:
 						case IDENT_IS_BITMAP:
+						case IDENT_CAN_PASTE_LINK:
 						case IDENT_LEN:
 						case IDENT_LENGTH:
 						case IDENT_GET:
@@ -1821,6 +1822,7 @@ namespace Nilesoft
 							return check(argc == 0, 1);
 						case IDENT_COMMAND_COPY:
 						case IDENT_COMMAND_COPY_TO_CLIPBOARD:
+						case IDENT_COMMAND_PASTE_SYMLINK:
 						case IDENT_COMMAND_SLEEP:
 						case IDENT_COMMAND_NAVIGATE:
 							return check(argc == 1, 1);

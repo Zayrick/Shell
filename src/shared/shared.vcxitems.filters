@@ -33,6 +33,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)System\IO\File.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)System\IO\IO.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)System\IO\Path.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)System\IO\SymbolicLink.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)System\Log.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)System\MemoryManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)System\Object.h" />

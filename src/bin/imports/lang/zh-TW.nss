@@ -30,6 +30,8 @@ version="版本"
 web_server="Web 伺服器"
 
 // file-manage.nss
+paste_symbolic_link="貼上符號連結"
+paste_symbolic_link_tip="在此處建立指向已複製檔案或資料夾的符號連結，可能需要系統管理員授權。"
 file_manage="檔案管理"
 copy_multiple_paths='複製所選項目的路徑（@sel.count 個項目）'
 all="全選"

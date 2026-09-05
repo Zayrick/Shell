@@ -30,6 +30,8 @@ version="Version"
 web_server="Web server"
 
 // file-manage.nss
+paste_symbolic_link="Paste symbolic link"
+paste_symbolic_link_tip="Create links to the copied files or folders here. Administrator permission may be requested."
 file_manage="File management"
 copy_multiple_paths='Copy paths of selected items (@sel.count)'
 all="All"

@@ -92,4 +92,6 @@ constexpr auto APP_WEBSITELINK	= L"https://nilesoft.org";
 #define IDS_ABOUT					2018
 #define IDS_ABOUT_TEXT				2019
 #define IDS_ALL_FILES				2020
+#define IDS_PASTE_SYMBOLIC_LINK		2021
+#define IDS_SYMBOLIC_LINK_ERROR		2022
 }

@@ -11,6 +11,7 @@
 #include <shlobj.h>
 #include <Library/PlutoVGWrap.h>
 #include <RegistryConfig.h>
+#include <System/IO/SymbolicLink.h>
 
 //#pragma comment(lib, "mincore.lib")
 #pragma comment(lib, "UxTheme.lib")
@@ -555,6 +556,41 @@ HTHEME _hTheme = nullptr;
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _In_ int)
 {
+	// Parse the helper's path arguments before the manager's options.
+	int argumentCount = 0;
+	auto arguments = ::CommandLineToArgvW(::GetCommandLineW(), &argumentCount);
+	if(arguments && argumentCount >= 2 && ::wcscmp(arguments[1], L"--paste-symlink") == 0)
+	{
+		std::wstring executable = arguments[0];
+		std::wstring directory = argumentCount >= 3 ? arguments[2] : L"";
+		std::vector<std::wstring> files;
+		for(int i = 3; i < argumentCount; ++i)
+			files.emplace_back(arguments[i]);
+		::LocalFree(arguments);
+		COM_INITIALIZER com(true);
+		DWORD error = files.empty() ? ERROR_INVALID_PARAMETER : ERROR_SUCCESS;
+		std::wstring failedPath = directory;
+		for(size_t i = 0; i < files.size(); ++i)
+		{
+			error = IO::SymbolicLink::Create(files[i], directory);
+			if(error == ERROR_SUCCESS)
+				continue;
+			failedPath = files[i] + L"\n\u2192 " + directory;
+			if((error == ERROR_PRIVILEGE_NOT_HELD || error == ERROR_ACCESS_DENIED)
+				&& !Security::Elevation::IsElevated())
+			{
+				// Retry only unfinished sources, so successful links are not duplicated.
+				error = IO::SymbolicLink::Launch(executable, directory, files, nullptr, true, i);
+			}
+			break;
+		}
+		if(error != ERROR_SUCCESS && error != ERROR_CANCELLED)
+			IO::SymbolicLink::ShowError(hInstance, nullptr, failedPath, error);
+		return static_cast<int>(error);
+	}
+	if(arguments)
+		::LocalFree(arguments);
+
 	//auto argc = __argc;
 	//auto argv = __wargv;
 
