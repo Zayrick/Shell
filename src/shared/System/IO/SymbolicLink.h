@@ -178,19 +178,16 @@ namespace Nilesoft::IO
 			}
 		}
 
-		static void ShowError(HMODULE module, HWND owner, const std::wstring &path, DWORD error)
+		static void ShowError(HWND owner, const std::wstring &path, DWORD error)
 		{
-			wchar_t title[256]{}, description[512]{};
-			::LoadStringW(module, IDS_PASTE_SYMBOLIC_LINK, title, _countof(title));
-			::LoadStringW(module, IDS_SYMBOLIC_LINK_ERROR, description, _countof(description));
 			wchar_t *systemMessage = nullptr;
 			::FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
 				nullptr, error, 0, reinterpret_cast<wchar_t *>(&systemMessage), 0, nullptr);
-			std::wstring text = std::wstring(description) + L"\n" + path + L"\n\n";
+			std::wstring text = path + L"\n\n";
 			text += systemMessage ? systemMessage : std::to_wstring(error);
 			if(systemMessage)
 				::LocalFree(systemMessage);
-			::MessageBoxW(owner, text.c_str(), title, MB_OK | MB_ICONERROR);
+			::MessageBoxW(owner, text.c_str(), APP_FULLNAME, MB_OK | MB_ICONERROR);
 		}
 	};
 }

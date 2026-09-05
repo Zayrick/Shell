@@ -30,6 +30,8 @@ version="Versión"
 web_server="Servidor web"
 
 // file-manage.nss
+paste_symbolic_link="Pegar enlace simbólico"
+paste_symbolic_link_tip="Crear aquí enlaces a los archivos o carpetas copiados. Es posible que se soliciten permisos de administrador."
 file_manage="Gestión de Archivos"
 copy_multiple_paths='Copiar (@sel.count) elementos seleccionados'
 all="Todos"

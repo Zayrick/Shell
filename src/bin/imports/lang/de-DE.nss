@@ -30,6 +30,8 @@ version="Version"
 web_server="Webserver"
 
 // file-manage.nss
+paste_symbolic_link="Symbolischen Link einfügen"
+paste_symbolic_link_tip="Hier Links zu den kopierten Dateien oder Ordnern erstellen. Möglicherweise sind Administratorrechte erforderlich."
 file_manage="Dateiverwaltung"
 copy_multiple_paths='Pfade der ausgewählten Elemente kopieren (@sel.count)'
 all="Alle"

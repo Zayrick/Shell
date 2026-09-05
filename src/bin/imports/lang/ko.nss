@@ -30,6 +30,8 @@ version="버전"
 web_server="웹 서버"
 
 // file-manage.nss
+paste_symbolic_link="심볼릭 링크 붙여넣기"
+paste_symbolic_link_tip="복사한 파일이나 폴더의 링크를 여기에 만듭니다. 관리자 권한이 필요할 수 있습니다."
 file_manage="파일 관리"
 copy_multiple_paths='선택한 항목 복사 (@sel.count)'
 all="모두"

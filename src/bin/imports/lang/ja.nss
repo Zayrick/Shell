@@ -30,6 +30,8 @@ version="バージョン"
 web_server="Web サーバー"
 
 // file-manage.nss
+paste_symbolic_link="シンボリックリンクを貼り付け"
+paste_symbolic_link_tip="コピーしたファイルやフォルダーへのリンクをここに作成します。管理者権限を求められる場合があります。"
 file_manage="ファイル管理"
 copy_multiple_paths='選択済みの (@sel.count) 項目をコピー'
 all="すべて"

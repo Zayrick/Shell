@@ -30,6 +30,8 @@ version="Версия"
 web_server="Веб-сервер"
 
 // file-manage.nss
+paste_symbolic_link="Вставить символическую ссылку"
+paste_symbolic_link_tip="Создать здесь ссылки на скопированные файлы или папки. Может потребоваться разрешение администратора."
 file_manage="Менеджер файлов"
 copy_multiple_paths='Скопировать пути выбранных элементов (@sel.count)'
 all="Все"

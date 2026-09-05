@@ -30,6 +30,8 @@ version="Versione"
 web_server="Server web"
 
 // file-manage.nss
+paste_symbolic_link="Incolla collegamento simbolico"
+paste_symbolic_link_tip="Crea qui collegamenti ai file o alle cartelle copiati. Potrebbero essere richiesti i permessi di amministratore."
 file_manage="Gestione file"
 copy_multiple_paths='Copia (@sel.count) elementi selezionati'
 all="Tutti"

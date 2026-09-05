@@ -30,6 +30,8 @@ version="Versjon"
 web_server="Nettserver"
 
 // file-manage.nss
+paste_symbolic_link="Lim inn symbolsk lenke"
+paste_symbolic_link_tip="Opprett lenker til de kopierte filene eller mappene her. Administratortillatelse kan bli forespurt."
 file_manage="Administrer fil"
 copy_multiple_paths='Kopier baner til valgte elementer (@sel.count)'
 all="Alle"

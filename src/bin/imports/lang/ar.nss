@@ -29,6 +29,8 @@ version="الإصدار"
 web_server="خادم ويب"
 
 // file-manage.nss
+paste_symbolic_link="لصق ارتباط رمزي"
+paste_symbolic_link_tip="إنشاء ارتباطات هنا إلى الملفات أو المجلدات المنسوخة. قد يُطلب إذن المسؤول."
 file_manage="ادارة الملفات"
 copy_multiple_paths='نسخ مسارات العناصر المحددة (@sel.count)'
 all="تحديد الكل"

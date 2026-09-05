@@ -30,6 +30,8 @@ version="Sürüm"
 web_server="Web sunucusu"
 
 // file-manage.nss
+paste_symbolic_link="Sembolik bağlantı yapıştır"
+paste_symbolic_link_tip="Kopyalanan dosya veya klasörlere burada bağlantılar oluşturun. Yönetici izni istenebilir."
 file_manage="Dosya yönetimi"
 copy_multiple_paths='(@sel.count) öğe seçildi, kopyala'
 all="Tümü"

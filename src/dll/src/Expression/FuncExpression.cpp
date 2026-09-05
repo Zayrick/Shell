@@ -1748,8 +1748,7 @@ namespace Nilesoft
 								error = IO::SymbolicLink::Launch(context->Application->Manager.c_str(),
 									directory.c_str(), files, context->wnd.owner);
 							if(error != ERROR_SUCCESS && error != ERROR_NO_MORE_ITEMS)
-								IO::SymbolicLink::ShowError(Initializer::HInstance, context->wnd.owner, directory.c_str(), error);
-							_result = error == ERROR_SUCCESS;
+								IO::SymbolicLink::ShowError(context->wnd.owner, directory.c_str(), error);
 							break;
 						}
 						case IDENT_ID_FOLDER_OPTIONS:

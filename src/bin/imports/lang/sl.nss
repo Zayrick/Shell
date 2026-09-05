@@ -30,6 +30,8 @@ version="Različica"
 web_server="Spletni strežnik"
 
 // file-manage.nss
+paste_symbolic_link="Prilepi simbolno povezavo"
+paste_symbolic_link_tip="Tukaj ustvari povezave do kopiranih datotek ali map. Morda bo potrebno dovoljenje skrbnika."
 file_manage="Upravljanje datotek"
 copy_multiple_paths='Kopiraj izbrane elemente (@sel.count)'
 all="Vse"

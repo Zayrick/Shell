@@ -30,6 +30,8 @@ version="Версія"
 web_server="Вебсервер"
 
 // file-manage.nss
+paste_symbolic_link="Вставити символічне посилання"
+paste_symbolic_link_tip="Створити тут посилання на скопійовані файли або папки. Може знадобитися дозвіл адміністратора."
 file_manage="Файловий менеджер"
 copy_multiple_paths='Скопіювати шляхи до обраних елементів (@sel.count)'
 all="Усе"

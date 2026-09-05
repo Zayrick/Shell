@@ -30,6 +30,8 @@ version="Versiune"
 web_server="Server web"
 
 // file-manage.nss
+paste_symbolic_link="Lipește un link simbolic"
+paste_symbolic_link_tip="Creează aici linkuri către fișierele sau folderele copiate. Este posibil să fie solicitate drepturi de administrator."
 file_manage="Gestionare fișiere"
 copy_multiple_paths='Copiază (@sel.count) (de) elemente selectate'
 all="Toate"

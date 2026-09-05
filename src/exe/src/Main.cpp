@@ -585,7 +585,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR,
 			break;
 		}
 		if(error != ERROR_SUCCESS && error != ERROR_CANCELLED)
-			IO::SymbolicLink::ShowError(hInstance, nullptr, failedPath, error);
+			IO::SymbolicLink::ShowError(nullptr, failedPath, error);
 		return static_cast<int>(error);
 	}
 	if(arguments)
