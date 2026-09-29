@@ -70,7 +70,8 @@
 						<File Id='modify.nss' Source='$(var.bin)\imports\modify.nss' />
 						<File Id='images.nss' Source='$(var.bin)\imports\images.nss' />
 						<File Id='taskbar.nss' Source='$(var.bin)\imports\taskbar.nss' />
-						<File Id='develop.nss' Source='$(var.bin)\imports\develop.nss' />
+						<File Id='clipboard.nss' Source='$(var.bin)\imports\clipboard.nss' />
+						<File Id='new.nss' Source='$(var.bin)\imports\new.nss' />
 						<File Id='file_manage.nss' Source='$(var.bin)\imports\file-manage.nss' />
 						<File Id='terminal.nss' Source='$(var.bin)\imports\terminal.nss' />
 					</Component>

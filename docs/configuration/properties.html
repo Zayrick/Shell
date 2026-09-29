@@ -115,6 +115,7 @@ Shell supports the following properties classes:
 			<li><a href="#tip">Tip</a></li>
 			<li><a href="#title">Title</a></li>
 			<li><a href="#type">Type</a></li>
+			<li><a href="#terminal-profiles">Terminal.profiles</a></li>
 		</ul>
 	</li>
 	<li>
@@ -578,6 +579,8 @@ in = "Sort By"</code></pre>
 		</ul>
 
 	</dd>
+	<dt>Contents</dt>
+	<dd><a href="#terminal-profiles">Terminal.profiles</a></dd>
 </dl>
 
 <div id="_menuitem-syntax" class="table-responsive">
@@ -781,6 +784,22 @@ in = "Sort By"</code></pre>
 			<td>nm</td>
 			<td>
 				<p>Move all immediate menuitems to the parent <a href="/docs/configuration/dynamic#menu">menu</a>.</p>
+				Default = <span class="syntax-keyword">false</span>
+			</td>
+		</tr>
+		<tr id="terminal-profiles">
+			<td>Terminal.profiles</td>
+			<td>nm</td>
+			<td>
+				<p>Set <code>terminal.profiles=true</code> to list the visible Windows Terminal profiles in
+				<code>%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json</code>.
+				Entries follow the profile order, open in the selected directory, and use the menu's
+				<code>admin</code> and <code>tip</code> settings.</p>
+				<p>Icons come from each profile, <code>profiles.defaults</code>, or Terminal's built-in profiles and JSON fragments.
+				Supported paths include local files, environment variables, relative paths, and
+				<code>ms-appdata</code>/<code>ms-appx</code> resources. Relative paths use the settings or fragment directory.
+				Unavailable images use the menu's icon.</p>
+				<p>The submenu's configured items are used when Terminal is unavailable or no visible profiles can be loaded.</p>
 				Default = <span class="syntax-keyword">false</span>
 			</td>
 		</tr>

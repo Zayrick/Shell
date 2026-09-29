@@ -161,6 +161,7 @@
     <ClInclude Include="src\Include\Hooker.h" />
     <ClInclude Include="src\Include\Initializer.h" />
     <ClInclude Include="src\Include\Menu.h" />
+    <ClInclude Include="src\Include\WindowsTerminal.h" />
     <ClInclude Include="src\Include\MenuItem.h" />
     <ClInclude Include="src\Include\Selections.h" />
     <ClInclude Include="src\Include\ContextMenu.h" />

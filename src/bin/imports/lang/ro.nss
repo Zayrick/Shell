@@ -7,33 +7,13 @@ xxx="Bun venit!"
 // shell.nss
 pin_unpin="Fixează/Anulează fixarea"
 
-// develop.nss
-develop="&Dezvoltare"
-editors="Aplicații de editare"
-windows_notepad="Windows Notepad"
-run="Execută"
-watch="Monitorizează modificările"
-clean="Curăță"
-build_debug="Compilează (depanare)"
-build_release="Compilează (lansare)"
-publish="Publică"
-publish_single_file="Publică într-un singur fișier"
-framework_dependent_deployment="Implementare dependentă de cadru"
-framework_dependent_executable="Executabil dependent de cadru"
-self_contained_deployment="Implementare autonomă"
-single_file="Fișier unic"
-single_file_trimmed="Fișier unic (redus)"
-ef_migrations_add="Adaugă migrare EF (InitialCreate)"
-ef_database_update="Actualizează baza de date EF"
-help="Ajutor"
-version="Versiune"
-web_server="Server web"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Lipește un link simbolic"
 paste_symbolic_link_tip="Creează aici linkuri către fișierele sau folderele copiate. Este posibil să fie solicitate drepturi de administrator."
-file_manage="Gestionare fișiere"
 copy_multiple_paths='Copiază (@sel.count) (de) elemente selectate'
+
+// file-manage.nss
+file_manage="Gestionare fișiere"
 all="Toate"
 invert="Inversează"
 none="Nimic"
@@ -54,6 +34,8 @@ archive="Arhivă"
 created="Creat"
 modified="Modificat"
 accessed="Accesat"
+
+// new.nss
 new_folder="Folder nou"
 new_file="Fișier nou"
 datetime="Dată și oră"
@@ -103,6 +85,7 @@ connections="Conexiuni"
 
 
 // taskbar.nss
+version="Versiune"
 paint="Paint"
 edge="Edge"
 calculator="Calculator"

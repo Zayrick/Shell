@@ -8,33 +8,13 @@ xxx="欢迎用中文"
 // shell.nss
 pin_unpin="固定/取消固定"
 
-// develop.nss
-develop="开发"
-editors="编辑器"
-windows_notepad="Windows 记事本"
-run="运行"
-watch="监视更改"
-clean="清理"
-build_debug="构建（调试）"
-build_release="构建（发布）"
-publish="发布"
-publish_single_file="发布为单个文件"
-framework_dependent_deployment="依赖框架部署"
-framework_dependent_executable="依赖框架的可执行文件"
-self_contained_deployment="独立部署"
-single_file="单文件"
-single_file_trimmed="单文件（裁剪）"
-ef_migrations_add="添加 EF 迁移（InitialCreate）"
-ef_database_update="更新 EF 数据库"
-help="帮助"
-version="版本"
-web_server="Web 服务器"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="粘贴符号链接"
 paste_symbolic_link_tip="在此处创建指向已复制文件或文件夹的符号链接，可能需要管理员授权。"
-file_manage="文件管理"
 copy_multiple_paths='复制选中项目的路径（@sel.count 项）'
+
+// file-manage.nss
+file_manage="文件管理"
 all="全选"
 invert="反选"
 none="全不选"
@@ -55,6 +35,8 @@ archive="存档"
 created="创建时间"
 modified="修改时间"
 accessed="访问时间"
+
+// new.nss
 new_folder="新建文件夹"
 new_file="新建文件"
 datetime="当前时间"
@@ -104,6 +86,7 @@ connections="网络连接"
 
 
 // taskbar.nss
+version="版本"
 paint="画图"
 edge="Edge"
 calculator="计算器"

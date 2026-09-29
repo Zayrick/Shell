@@ -7,33 +7,13 @@ xxx="Benvenuti in italiano"
 // shell.nss
 pin_unpin="Blocca/Sblocca"
 
-// develop.nss
-develop="&Sviluppo"
-editors="Editor"
-windows_notepad="Blocco note"
-run="Esegui"
-watch="Monitora modifiche"
-clean="Pulisci"
-build_debug="Compila (debug)"
-build_release="Compila (rilascio)"
-publish="Pubblica"
-publish_single_file="Pubblica come file singolo"
-framework_dependent_deployment="Distribuzione dipendente dal framework"
-framework_dependent_executable="Eseguibile dipendente dal framework"
-self_contained_deployment="Distribuzione autonoma"
-single_file="File singolo"
-single_file_trimmed="File singolo (ridotto)"
-ef_migrations_add="Aggiungi migrazione EF (InitialCreate)"
-ef_database_update="Aggiorna database EF"
-help="Guida"
-version="Versione"
-web_server="Server web"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Incolla collegamento simbolico"
 paste_symbolic_link_tip="Crea qui collegamenti ai file o alle cartelle copiati. Potrebbero essere richiesti i permessi di amministratore."
-file_manage="Gestione file"
 copy_multiple_paths='Copia (@sel.count) elementi selezionati'
+
+// file-manage.nss
+file_manage="Gestione file"
 all="Tutti"
 invert="Inverti"
 none="Nessuno"
@@ -54,6 +34,8 @@ archive="Archivio"
 created="Creato"
 modified="Modificato"
 accessed="Ultimo accesso"
+
+// new.nss
 new_folder="Nuova cartella"
 new_file="Nuovo file"
 datetime="Data/ora"
@@ -103,6 +85,7 @@ connections="Connessioni"
 
 
 // taskbar.nss
+version="Versione"
 paint="Paint"
 edge="Edge"
 calculator="Calcolatrice"

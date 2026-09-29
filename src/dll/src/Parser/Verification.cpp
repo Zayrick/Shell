@@ -221,6 +221,8 @@ namespace Nilesoft
 			{
 				switch(id[0])
 				{
+					case MENU_TERMINAL:
+						return id[1] == IDENT_PROFILES ? check(2, assignable) : check(0);
 					case MENU_EXPANDED:
 						return check(1, auto_signer);
 				}

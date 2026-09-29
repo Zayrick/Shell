@@ -7,33 +7,13 @@ xxx="歡迎使用繁體中文"
 // shell.nss
 pin_unpin="固定/取消固定"
 
-// develop.nss
-develop="開發"
-editors="編輯器"
-windows_notepad="Windows 記事本"
-run="執行"
-watch="監看變更"
-clean="清理"
-build_debug="建置（偵錯）"
-build_release="建置（發行）"
-publish="發佈"
-publish_single_file="發佈為單一檔案"
-framework_dependent_deployment="相依於架構的部署"
-framework_dependent_executable="相依於架構的可執行檔"
-self_contained_deployment="獨立部署"
-single_file="單一檔案"
-single_file_trimmed="單一檔案（裁剪）"
-ef_migrations_add="新增 EF 移轉（InitialCreate）"
-ef_database_update="更新 EF 資料庫"
-help="說明"
-version="版本"
-web_server="Web 伺服器"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="貼上符號連結"
 paste_symbolic_link_tip="在此處建立指向已複製檔案或資料夾的符號連結，可能需要系統管理員授權。"
-file_manage="檔案管理"
 copy_multiple_paths='複製所選項目的路徑（@sel.count 個項目）'
+
+// file-manage.nss
+file_manage="檔案管理"
 all="全選"
 invert="反向選擇"
 none="全部不選"
@@ -54,6 +34,8 @@ archive="封存"
 created="建立時間"
 modified="修改時間"
 accessed="存取時間"
+
+// new.nss
 new_folder="新增資料夾"
 new_file="新增檔案"
 datetime="當前時間"
@@ -103,6 +85,7 @@ connections="網路連線"
 
 
 // taskbar.nss
+version="版本"
 paint="小畫家"
 edge="Edge"
 calculator="小算盤"

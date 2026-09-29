@@ -1,4 +1,5 @@
-menu(type='*' where=(sel.count or wnd.is_taskbar or wnd.is_edit) title=title.terminal sep=sep.top image=icon.run_with_powershell)
+menu(type='*' where=(sel.count or wnd.is_taskbar or wnd.is_edit) title=title.terminal sep=sep.top image=icon.run_with_powershell
+	terminal.profiles=true admin=key.shift() or key.rbutton() tip=["\xE1A7 " + loc.run_as_admin, tip.warning, 1.0])
 {
 	$tip_run_admin=["\xE1A7 " + loc.run_as_admin, tip.warning, 1.0]
 	$has_admin=key.shift() or key.rbutton()

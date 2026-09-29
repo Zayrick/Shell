@@ -6,33 +6,13 @@ by: github.com/moudey
 // shell.nss
 pin_unpin="تثبيت/إلغاء التثبيت"
 
-// develop.nss
-develop="تطوير"
-editors="محررات"
-windows_notepad="مفكرة الويندوز"
-run="تشغيل"
-watch="مراقبة التغييرات"
-clean="تنظيف"
-build_debug="بناء (تصحيح الأخطاء)"
-build_release="بناء (إصدار)"
-publish="نشر"
-publish_single_file="نشر كملف واحد"
-framework_dependent_deployment="نشر يعتمد على إطار العمل"
-framework_dependent_executable="ملف تنفيذي يعتمد على إطار العمل"
-self_contained_deployment="نشر مستقل"
-single_file="ملف واحد"
-single_file_trimmed="ملف واحد (مقلص)"
-ef_migrations_add="إضافة ترحيل EF (InitialCreate)"
-ef_database_update="تحديث قاعدة بيانات EF"
-help="مساعدة"
-version="الإصدار"
-web_server="خادم ويب"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="لصق ارتباط رمزي"
 paste_symbolic_link_tip="إنشاء ارتباطات هنا إلى الملفات أو المجلدات المنسوخة. قد يُطلب إذن المسؤول."
-file_manage="ادارة الملفات"
 copy_multiple_paths='نسخ مسارات العناصر المحددة (@sel.count)'
+
+// file-manage.nss
+file_manage="ادارة الملفات"
 all="تحديد الكل"
 invert="عكس التحديد"
 none="إلغاء التحديد"
@@ -53,6 +33,8 @@ archive="ارشيف"
 created="تاريخ الإنشاء"
 modified="تاريخ التعديل"
 accessed="تاريخ الوصول"
+
+// new.nss
 new_folder="مجلد جديد"
 new_file="ملف جديد"
 datetime="تاريخ ووقت"
@@ -102,6 +84,7 @@ connections="الاتصالات"
 
 
 // taskbar.nss
+version="الإصدار"
 paint="الرسام"
 edge="Edge"
 calculator="الحاسبة"

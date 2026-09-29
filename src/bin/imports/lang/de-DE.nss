@@ -7,33 +7,13 @@ xxx="Begrüßung auf Deutsch"
 // shell.nss
 pin_unpin="Anpinnen/Lösen"
 
-// develop.nss
-develop="&Entwickeln"
-editors="Editoren"
-windows_notepad="Windows-Editor"
-run="Ausführen"
-watch="Änderungen überwachen"
-clean="Bereinigen"
-build_debug="Erstellen (Debug)"
-build_release="Erstellen (Release)"
-publish="Veröffentlichen"
-publish_single_file="Als einzelne Datei veröffentlichen"
-framework_dependent_deployment="Frameworkabhängige Bereitstellung"
-framework_dependent_executable="Frameworkabhängige ausführbare Datei"
-self_contained_deployment="Eigenständige Bereitstellung"
-single_file="Einzelne Datei"
-single_file_trimmed="Einzelne Datei (gekürzt)"
-ef_migrations_add="EF-Migration hinzufügen (InitialCreate)"
-ef_database_update="EF-Datenbank aktualisieren"
-help="Hilfe"
-version="Version"
-web_server="Webserver"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Symbolischen Link einfügen"
 paste_symbolic_link_tip="Hier Links zu den kopierten Dateien oder Ordnern erstellen. Möglicherweise sind Administratorrechte erforderlich."
-file_manage="Dateiverwaltung"
 copy_multiple_paths='Pfade der ausgewählten Elemente kopieren (@sel.count)'
+
+// file-manage.nss
+file_manage="Dateiverwaltung"
 all="Alle"
 invert="Umkehren"
 none="Keiner"
@@ -54,6 +34,8 @@ archive="Archiv"
 created="Erstellt"
 modified="Geändert"
 accessed="Zugegriffen"
+
+// new.nss
 new_folder="Neuer Ordner"
 new_file="Neue Datei"
 datetime="Datum/Uhrzeit"
@@ -103,6 +85,7 @@ connections="Verbindungen"
 
 
 // taskbar.nss
+version="Version"
 paint="Paint"
 edge="Edge"
 calculator="Taschenrechner"

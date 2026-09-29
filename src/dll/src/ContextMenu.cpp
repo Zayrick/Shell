@@ -1,6 +1,7 @@
 #include <pch.h>
 #include "Include/Theme.h"
 #include "Include/ContextMenu.h"
+#include "Include/WindowsTerminal.h"
 #include "Include/stb_image_write.h"
 
 using namespace Nilesoft::Diagnostics;
@@ -259,6 +260,42 @@ namespace Nilesoft
 				Logger::Exception(__func__);
 #endif
 			}
+		}
+
+		std::vector<NativeMenu *> ContextMenu::terminal_items(NativeMenu *parent)
+		{
+			// Keep generated commands alive for this context menu.
+			auto [entry, inserted] = _terminal_menus.try_emplace(parent);
+			if(inserted)
+			{
+				auto executable = WindowsTerminal::Executable();
+				if(executable.empty()) return {};
+				auto profiles = WindowsTerminal::Load();
+				if(profiles.empty()) return {};
+				WindowsTerminal::ResolveIcons(profiles, WindowsTerminal::PackageDirectory());
+				std::wstring directory;
+				if(!Selected.Directory.empty()) directory = Selected.Directory.c_str();
+				if(Selected.Front && Path::IsDirectoryExists(Selected.Front->Path))
+					directory = Selected.Front->Path.c_str();
+				for(const auto &profile : profiles)
+				{
+					auto child = std::make_unique<NativeMenu>(parent);
+					child->type = NativeMenuType::Item;
+					child->properties = 1;
+					child->title = new StringExpression(string(profile.name).replace(L"&", L"&&"));
+					child->cmd->command.type = COMMAND_EXPRESSION;
+					child->cmd->command.expr = new StringExpression(executable);
+					child->cmd->arguments = new StringExpression(WindowsTerminal::Arguments(profile, directory));
+					if(parent->cmd->admin) child->cmd->admin = parent->cmd->admin.get()->Copy();
+					if(parent->tip) child->tip = parent->tip.get()->Copy();
+					child->image.import = ImageImport::Image;
+					if(!profile.icon.empty()) child->image.expr = new StringExpression(profile.icon);
+					entry->second.push_back(std::move(child));
+				}
+			}
+			std::vector<NativeMenu *> result;
+			for(const auto &child : entry->second) result.push_back(child.get());
+			return result;
 		}
 
 		bool ContextMenu::prepare_new_items(PositionList &posList,
@@ -557,6 +594,11 @@ namespace Nilesoft
 												}
 											}
 										}
+										else if(owner && item->owner && item->owner->terminal_profiles)
+										{
+											mii->image = owner->image;
+											mii->image.inherited = true;
+										}
 									}
 									else if(item->image.import == ImageImport::Command)
 									{
@@ -660,6 +702,11 @@ namespace Nilesoft
 								m_sub->hash = mii->hash;
 								m_sub->owner = mii;
 								m_sub->dynamics = item->items;
+								if(item->terminal_profiles && _context.eval_bool(item->terminal_profiles))
+								{
+									auto profiles = terminal_items(item);
+									if(!profiles.empty()) m_sub->dynamics = std::move(profiles);
+								}
 								//m_sub->parent = item;
 								m_sub->parent = item->owner;
 

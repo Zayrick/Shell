@@ -7,33 +7,13 @@ xxx="Türkçe hoş geldiniz"
 // shell.nss
 pin_unpin="Sabitle/Kaldır"
 
-// develop.nss
-develop="&Geliştirici"
-editors="düzenleyiciler"
-windows_notepad="Windows not defteri"
-run="Çalıştır"
-watch="Değişiklikleri izle"
-clean="Temizle"
-build_debug="Derle (hata ayıklama)"
-build_release="Derle (yayın)"
-publish="Yayımla"
-publish_single_file="Tek dosya olarak yayımla"
-framework_dependent_deployment="Çerçeveye bağımlı dağıtım"
-framework_dependent_executable="Çerçeveye bağımlı yürütülebilir dosya"
-self_contained_deployment="Bağımsız dağıtım"
-single_file="Tek dosya"
-single_file_trimmed="Tek dosya (kırpılmış)"
-ef_migrations_add="EF geçişi ekle (InitialCreate)"
-ef_database_update="EF veritabanını güncelle"
-help="Yardım"
-version="Sürüm"
-web_server="Web sunucusu"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Sembolik bağlantı yapıştır"
 paste_symbolic_link_tip="Kopyalanan dosya veya klasörlere burada bağlantılar oluşturun. Yönetici izni istenebilir."
-file_manage="Dosya yönetimi"
 copy_multiple_paths='(@sel.count) öğe seçildi, kopyala'
+
+// file-manage.nss
+file_manage="Dosya yönetimi"
 all="Tümü"
 invert="Ters çevir"
 none="Hiçbiri"
@@ -54,6 +34,8 @@ archive="Arşiv"
 created="Oluşturulma"
 modified="Değiştirilme"
 accessed="Erişim"
+
+// new.nss
 new_folder="Yeni Klasör"
 new_file="Yeni Dosya"
 datetime="TarihSaat"
@@ -103,6 +85,7 @@ connections="Bağlantılar"
 
 
 // taskbar.nss
+version="Sürüm"
 paint="Paint"
 edge="Edge"
 calculator="Hesap Makinesi"

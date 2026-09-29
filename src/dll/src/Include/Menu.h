@@ -259,6 +259,7 @@ namespace Nilesoft
 			Scope		variables;
 			int32_t		for_each = 0;
 			auto_expr	expanded;
+			auto_expr	terminal_profiles;
 			std::vector<NativeMenu *> items;
 			CommandProperty	*cmd{};
 

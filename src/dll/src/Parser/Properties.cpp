@@ -738,6 +738,9 @@ namespace Nilesoft
 						case MENU_EXPANDED:
 							menu->expanded = id.signer ? expr.release() : new NumberExpression(1);
 							break;
+						case MENU_TERMINAL:
+							menu->terminal_profiles = expr.release();
+							break;
 						case MENU_ICON:
 						case MENU_IMAGE:
 						{

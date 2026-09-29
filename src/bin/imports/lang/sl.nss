@@ -7,33 +7,13 @@ xxx="Dobrodošli v slovenščini"
 // shell.nss
 pin_unpin="Pripni/Odpni"
 
-// develop.nss
-develop="&Razvijaj"
-editors="Urejevalniki"
-windows_notepad="Beležnica za Windows"
-run="Zaženi"
-watch="Spremljaj spremembe"
-clean="Počisti"
-build_debug="Prevedi (razhroščevanje)"
-build_release="Prevedi (izdaja)"
-publish="Objavi"
-publish_single_file="Objavi kot eno datoteko"
-framework_dependent_deployment="Uvajanje, odvisno od ogrodja"
-framework_dependent_executable="Izvedljiva datoteka, odvisna od ogrodja"
-self_contained_deployment="Samostojno uvajanje"
-single_file="Ena datoteka"
-single_file_trimmed="Ena datoteka (obrezana)"
-ef_migrations_add="Dodaj migracijo EF (InitialCreate)"
-ef_database_update="Posodobi podatkovno zbirko EF"
-help="Pomoč"
-version="Različica"
-web_server="Spletni strežnik"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Prilepi simbolno povezavo"
 paste_symbolic_link_tip="Tukaj ustvari povezave do kopiranih datotek ali map. Morda bo potrebno dovoljenje skrbnika."
-file_manage="Upravljanje datotek"
 copy_multiple_paths='Kopiraj izbrane elemente (@sel.count)'
+
+// file-manage.nss
+file_manage="Upravljanje datotek"
 all="Vse"
 invert="Obrni izbor"
 none="Nič"
@@ -54,6 +34,8 @@ archive="Arhiv"
 created="Ustvarjeno"
 modified="Spremenjeno"
 accessed="Dostopano"
+
+// new.nss
 new_folder="Nov imenik"
 new_file="Nova datoteka"
 datetime="Datum in čas"
@@ -103,6 +85,7 @@ connections="Povezave"
 
 
 // taskbar.nss
+version="Različica"
 paint="Slikar"
 edge="Edge"
 calculator="Kalkulator"

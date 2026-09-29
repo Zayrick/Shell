@@ -98,6 +98,9 @@
     <ClInclude Include="src\Include\Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Include\WindowsTerminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\Include\MenuItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>

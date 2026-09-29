@@ -35,6 +35,10 @@ Features
 * Minimal resource usage.
 * No limitations.
 
+The default menu provides **Copy Path** at the top level and **New Folder** and **New File** at the start of the system **New** submenu.
+
+**Terminal** lists your visible Windows Terminal profiles with their icons, in the configured order, and opens the selected profile in the current folder.
+
 
 Requirements
 ------------------

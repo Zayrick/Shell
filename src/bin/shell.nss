@@ -41,7 +41,8 @@ menu(mode="multiple" title=title.more_options image=icon.more_options)
 }
 
 import 'imports/terminal.nss'
+import 'imports/clipboard.nss'
+import 'imports/new.nss'
 import 'imports/file-manage.nss'
-import 'imports/develop.nss'
 import 'imports/goto.nss'
 import 'imports/taskbar.nss'

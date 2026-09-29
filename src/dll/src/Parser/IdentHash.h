@@ -47,6 +47,8 @@ namespace Nilesoft
 		//
 		// Menu properties
 		constexpr auto MENU_ID = 0x00597832U;
+		constexpr auto MENU_TERMINAL = 0xFA1DB361U;
+		constexpr auto IDENT_PROFILES = 0x2A4D4849U;
 
 		constexpr auto MENU_SEP = 0x0B88A98DU;
 		constexpr auto MENU_SEPARATOR = 0x14015AB6U;

@@ -7,33 +7,13 @@ xxx="Добро пожаловать"
 // shell.nss
 pin_unpin="Закрепить/Открепить"
 
-// develop.nss
-develop="&Разработка"
-editors="Редакторы"
-windows_notepad="Блокнот"
-run="Запустить"
-watch="Отслеживать изменения"
-clean="Очистить"
-build_debug="Собрать (отладка)"
-build_release="Собрать (выпуск)"
-publish="Опубликовать"
-publish_single_file="Опубликовать одним файлом"
-framework_dependent_deployment="Развёртывание с зависимостью от платформы"
-framework_dependent_executable="Исполняемый файл с зависимостью от платформы"
-self_contained_deployment="Автономное развёртывание"
-single_file="Один файл"
-single_file_trimmed="Один файл (с обрезкой)"
-ef_migrations_add="Добавить миграцию EF (InitialCreate)"
-ef_database_update="Обновить базу данных EF"
-help="Справка"
-version="Версия"
-web_server="Веб-сервер"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Вставить символическую ссылку"
 paste_symbolic_link_tip="Создать здесь ссылки на скопированные файлы или папки. Может потребоваться разрешение администратора."
-file_manage="Менеджер файлов"
 copy_multiple_paths='Скопировать пути выбранных элементов (@sel.count)'
+
+// file-manage.nss
+file_manage="Менеджер файлов"
 all="Все"
 invert="Инвертировать выделение"
 none="Ничего"
@@ -54,6 +34,8 @@ archive="Архив"
 created="Создано"
 modified="Изменено"
 accessed="Получен доступ"
+
+// new.nss
 new_folder="Новая папка"
 new_file="Новый файл"
 datetime="Имя: Дата и время"
@@ -103,6 +85,7 @@ connections="Сетевые подключения"
 
 
 // taskbar.nss
+version="Версия"
 paint="Paint"
 edge="Edge"
 calculator="Калькулятор"

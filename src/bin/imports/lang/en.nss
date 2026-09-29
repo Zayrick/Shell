@@ -7,33 +7,13 @@ xxx="Welcome in english"
 // shell.nss
 pin_unpin="Pin/Unpin"
 
-// develop.nss
-develop="&Develop"
-editors="Editors"
-windows_notepad="Windows Notepad"
-run="Run"
-watch="Watch for changes"
-clean="Clean"
-build_debug="Build (Debug)"
-build_release="Build (Release)"
-publish="Publish"
-publish_single_file="Publish a single file"
-framework_dependent_deployment="Framework-dependent deployment"
-framework_dependent_executable="Framework-dependent executable"
-self_contained_deployment="Self-contained deployment"
-single_file="Single file"
-single_file_trimmed="Single file (trimmed)"
-ef_migrations_add="Add EF migration (InitialCreate)"
-ef_database_update="Update EF database"
-help="Help"
-version="Version"
-web_server="Web server"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Paste symbolic link"
 paste_symbolic_link_tip="Create links to the copied files or folders here. Administrator permission may be requested."
-file_manage="File management"
 copy_multiple_paths='Copy paths of selected items (@sel.count)'
+
+// file-manage.nss
+file_manage="File management"
 all="All"
 invert="Invert"
 none="None"
@@ -54,6 +34,8 @@ archive="Archive"
 created="Created"
 modified="Modified"
 accessed="Accessed"
+
+// new.nss
 new_folder="New Folder"
 new_file="New File"
 datetime="Date and time"
@@ -103,6 +85,7 @@ connections="Connections"
 
 
 // taskbar.nss
+version="Version"
 paint="Paint"
 edge="Edge"
 calculator="Calculator"

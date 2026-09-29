@@ -1,23 +1,5 @@
-﻿item(type='back' where=io.dir.exists(sel.path) and clipboard.can_paste_link
-	title=loc.paste_symbolic_link image=icon.paste_shortcut
-	tip=loc.paste_symbolic_link_tip pos=indexof(str.replace(title.paste_shortcut, '&', ''), 1)
-	cmd=command.paste_symlink(sel.path))
-
 menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" title=loc.file_manage image=\uE253)
 {
-	menu(separator="after" title=title.copy_path image=icon.copy_path)
-	{
-		item(where=sel.count > 1 title=loc.copy_multiple_paths cmd=command.copy(sel(false, "\n")))
-		item(mode="single" title=@sel.path tip=sel.path cmd=command.copy(sel.path))
-		item(mode="single" type='file' separator="before" where=length(sel.lnk)>0 title=sel.lnk cmd=command.copy(sel.lnk))
-		separator
-		item(mode="single" where=@sel.parent.len>3 title=sel.parent cmd=@command.copy(sel.parent))
-		separator
-		item(mode="single" type='file|dir|back.dir' title=sel.file.name cmd=command.copy(sel.file.name))
-		item(mode="single" type='file' where=sel.file.len != sel.file.title.len title=@sel.file.title cmd=command.copy(sel.file.title))
-		item(mode="single" type='file' where=sel.file.ext.len>0 title=sel.file.ext cmd=command.copy(sel.file.ext))
-	}
-
 	item(mode="single" type="file" title=loc.change_extension image=\uE0B5 cmd=if(input(loc.change_extension, loc.type_extension),
 		io.rename(sel.path, path.join(sel.dir, sel.file.title + "." + input.result))))
 
@@ -61,24 +43,6 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	{
 		item(title=loc.register admin cmd='regsvr32.exe' args='@sel.path.quote' invoke="multiple")
 		item(title=loc.unregister admin cmd='regsvr32.exe' args='/u @sel.path.quote' invoke="multiple")
-	}
-
-	menu(mode="single" type='back' expanded=true)
-	{
-		menu(separator="before" title=loc.new_folder image=icon.new_folder)
-		{
-			item(title=loc.datetime cmd=io.dir.create(sys.datetime("ymdHMSs")))
-			item(title=loc.guid cmd=io.dir.create(str.guid))
-		}
-
-		menu(title=loc.new_file image=icon.new_file)
-		{
-			$dt = sys.datetime("ymdHMSs")
-			item(title='TXT' cmd=io.file.create('@(dt).txt', 'Hello World!'))
-			item(title='XML' cmd=io.file.create('@(dt).xml', '<root>Hello World!</root>'))
-			item(title='JSON' cmd=io.file.create('@(dt).json', '[]'))
-			item(title='HTML' cmd=io.file.create('@(dt).html', "<html>\n\t<head>\n\t</head>\n\t<body>Hello World!\n\t</body>\n</html>"))
-		}
 	}
 
 	item(where=!wnd.is_desktop title=title.folder_options image=icon.folder_options cmd=command.folder_options)

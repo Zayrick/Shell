@@ -7,33 +7,13 @@ xxx="한국어 번역 - 비너스걸"
 // shell.nss
 pin_unpin="고정/고정 해제"
 
-// develop.nss
-develop="개발(&D)"
-editors="편집기"
-windows_notepad="Windows 메모장"
-run="실행"
-watch="변경 사항 감시"
-clean="정리"
-build_debug="빌드 (디버그)"
-build_release="빌드 (릴리스)"
-publish="게시"
-publish_single_file="단일 파일로 게시"
-framework_dependent_deployment="프레임워크 종속 배포"
-framework_dependent_executable="프레임워크 종속 실행 파일"
-self_contained_deployment="자체 포함 배포"
-single_file="단일 파일"
-single_file_trimmed="단일 파일 (트리밍)"
-ef_migrations_add="EF 마이그레이션 추가 (InitialCreate)"
-ef_database_update="EF 데이터베이스 업데이트"
-help="도움말"
-version="버전"
-web_server="웹 서버"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="심볼릭 링크 붙여넣기"
 paste_symbolic_link_tip="복사한 파일이나 폴더의 링크를 여기에 만듭니다. 관리자 권한이 필요할 수 있습니다."
-file_manage="파일 관리"
 copy_multiple_paths='선택한 항목 복사 (@sel.count)'
+
+// file-manage.nss
+file_manage="파일 관리"
 all="모두"
 invert="반전"
 none="없음"
@@ -54,6 +34,8 @@ archive="보관"
 created="만든 날짜"
 modified="수정 날짜"
 accessed="접근 날짜"
+
+// new.nss
 new_folder="새 폴더"
 new_file="새 파일"
 datetime="날짜 시간"
@@ -103,6 +85,7 @@ connections="연결"
 
 
 // taskbar.nss
+version="버전"
 paint="그림판"
 edge="Edge"
 calculator="계산기"

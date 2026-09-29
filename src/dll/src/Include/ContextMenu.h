@@ -695,6 +695,7 @@ plutovg_move_to(pluto, start.x, start.y);
 			std::vector<WND *> _level;
 			std::unordered_map<HWND, WND> _map;
 			GC<MenuItemInfo> _gc;
+			std::unordered_map<NativeMenu *, std::vector<std::unique_ptr<NativeMenu>>> _terminal_menus;
 			bool _uninitialized = false;
 
 			menuitem_t *__system_menu_tree = nullptr;
@@ -708,6 +709,7 @@ plutovg_move_to(pluto, start.x, start.y);
 			ContextMenu *get_prop(auto hWnd) { return Prop::Get(hWnd); }
 
 			void init_cfg();
+			std::vector<NativeMenu *> terminal_items(NativeMenu *parent);
 			bool prepare_new_items(PositionList &posList, const std::vector<NativeMenu *> &list, MenuItemInfo *owner, menu_t *menu, bool moved = false);
 			bool prepare_system_items(PositionList &list, menu_t *menu);
 			bool prepare_system_items2(PositionList &list, menu_t *menu);

@@ -7,33 +7,13 @@ xxx="Bem-vindo"
 // shell.nss
 pin_unpin="Fixar/Desafixar"
 
-// develop.nss
-develop="&Desenvolvimento"
-editors="Editores"
-windows_notepad="Bloco de Notas"
-run="Executar"
-watch="Monitorar alterações"
-clean="Limpar"
-build_debug="Compilar (depuração)"
-build_release="Compilar (lançamento)"
-publish="Publicar"
-publish_single_file="Publicar como arquivo único"
-framework_dependent_deployment="Implantação dependente de estrutura"
-framework_dependent_executable="Executável dependente de estrutura"
-self_contained_deployment="Implantação autossuficiente"
-single_file="Arquivo único"
-single_file_trimmed="Arquivo único (cortado)"
-ef_migrations_add="Adicionar migração do EF (InitialCreate)"
-ef_database_update="Atualizar banco de dados do EF"
-help="Ajuda"
-version="Versão"
-web_server="Servidor web"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Colar link simbólico"
 paste_symbolic_link_tip="Criar aqui links para os arquivos ou pastas copiados. Pode ser solicitada permissão de administrador."
-file_manage="Gerenciamento de arquivos"
 copy_multiple_paths='Copiar caminhos dos itens selecionados (@sel.count)'
+
+// file-manage.nss
+file_manage="Gerenciamento de arquivos"
 all="Todos"
 invert="Inverter"
 none="Nenhum"
@@ -54,6 +34,8 @@ archive="Arquivo compactado"
 created="Criado"
 modified="Modificado"
 accessed="Acessado"
+
+// new.nss
 new_folder="Nova Pasta"
 new_file="Novo Arquivo"
 datetime="Data/Hora"
@@ -103,6 +85,7 @@ connections="Conexões de rede"
 
 
 // taskbar.nss
+version="Versão"
 paint="Paint"
 edge="Edge"
 calculator="Calculadora"

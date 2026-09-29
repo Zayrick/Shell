@@ -7,33 +7,13 @@ xxx="Velkommen på norsk"
 // shell.nss
 pin_unpin="Fest/Løsne"
 
-// develop.nss
-develop="&Utvikle"
-editors="editorer"
-windows_notepad="Windows Notisblokk"
-run="Kjør"
-watch="Overvåk endringer"
-clean="Rydd"
-build_debug="Bygg (feilsøking)"
-build_release="Bygg (utgivelse)"
-publish="Publiser"
-publish_single_file="Publiser som én fil"
-framework_dependent_deployment="Rammeverksavhengig distribusjon"
-framework_dependent_executable="Rammeverksavhengig kjørbar fil"
-self_contained_deployment="Selvstendig distribusjon"
-single_file="Én fil"
-single_file_trimmed="Én fil (trimmet)"
-ef_migrations_add="Legg til EF-migrering (InitialCreate)"
-ef_database_update="Oppdater EF-database"
-help="Hjelp"
-version="Versjon"
-web_server="Nettserver"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="Lim inn symbolsk lenke"
 paste_symbolic_link_tip="Opprett lenker til de kopierte filene eller mappene her. Administratortillatelse kan bli forespurt."
-file_manage="Administrer fil"
 copy_multiple_paths='Kopier baner til valgte elementer (@sel.count)'
+
+// file-manage.nss
+file_manage="Administrer fil"
 all="Alle"
 invert="Inverter"
 none="Ingen"
@@ -54,6 +34,8 @@ archive="Arkiv"
 created="Skapt"
 modified="Endret"
 accessed="Aksessert"
+
+// new.nss
 new_folder="Ny Mappe"
 new_file="Ny Fil"
 datetime="tidsdato"
@@ -103,6 +85,7 @@ connections="Tilkoblinger"
 
 
 // taskbar.nss
+version="Versjon"
 paint="Paint"
 edge="Edge"
 calculator="Kalkulator"

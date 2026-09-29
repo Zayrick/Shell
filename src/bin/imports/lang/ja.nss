@@ -7,33 +7,13 @@ xxx="ようこそ"
 // shell.nss
 pin_unpin="ピン留め/外す"
 
-// develop.nss
-develop="開発(&D)"
-editors="エディター"
-windows_notepad="Windows メモ帳"
-run="実行"
-watch="変更を監視"
-clean="クリーン"
-build_debug="ビルド（デバッグ）"
-build_release="ビルド（リリース）"
-publish="発行"
-publish_single_file="単一ファイルとして発行"
-framework_dependent_deployment="フレームワーク依存の展開"
-framework_dependent_executable="フレームワーク依存の実行ファイル"
-self_contained_deployment="自己完結型の展開"
-single_file="単一ファイル"
-single_file_trimmed="単一ファイル（トリミング）"
-ef_migrations_add="EF マイグレーションを追加（InitialCreate）"
-ef_database_update="EF データベースを更新"
-help="ヘルプ"
-version="バージョン"
-web_server="Web サーバー"
-
-// file-manage.nss
+// clipboard.nss
 paste_symbolic_link="シンボリックリンクを貼り付け"
 paste_symbolic_link_tip="コピーしたファイルやフォルダーへのリンクをここに作成します。管理者権限を求められる場合があります。"
-file_manage="ファイル管理"
 copy_multiple_paths='選択済みの (@sel.count) 項目をコピー'
+
+// file-manage.nss
+file_manage="ファイル管理"
 all="すべて"
 invert="反転"
 none="なし"
@@ -54,6 +34,8 @@ archive="アーカイブ"
 created="作成日時"
 modified="更新日時"
 accessed="アクセス日時"
+
+// new.nss
 new_folder="新しいフォルダ"
 new_file="新しいファイル"
 datetime="日時"
@@ -103,6 +85,7 @@ connections="ネットワーク接続"
 
 
 // taskbar.nss
+version="バージョン"
 paint="ペイント"
 edge="Edge"
 calculator="電卓"
